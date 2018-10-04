@@ -1,19 +1,17 @@
--- solid-fuel
--- uranium-235
--- uranium-238
--- used-up-uranium-fuel-cell
--- space-science-pack
-
-if not fw then fw = {} end
+if not fw then
+    fw = {}
+end
 
 require("prototypes.categories")
 
 fw.items_that_should_not_be_converted = {
-    ["coal"] = 1,
-    ["uranium-ore"] = 1,
-    ["copper-ore"] = 1,
-    ["iron-ore"] = 1,
-    ["stone"] = 1
+    ["coal"] = true,
+    ["uranium-ore"] = true,
+    ["copper-ore"] = true,
+    ["iron-ore"] = true,
+    ["stone"] = true,
+    ["wood"] = true,
+    ["wooden-chest"] = true
 }
 fw.types_to_convert = {
     {
@@ -48,29 +46,51 @@ fw.types_to_convert = {
     },
     {
         type = "rail-planner"
-    },
+    }
 }
+
+fw.additional_recipies_to_convert = {
+    "basic-oil-processing",
+    "advanced-oil-processing",
+    "coal-liquefaction",
+    "sulfuric-acid",
+    "heavy-oil-cracking",
+    "light-oil-cracking",
+    "solid-fuel-from-light-oil",
+    "solid-fuel-from-petroleum-gas",
+    "solid-fuel-from-heavy-oil",
+    "lubricant",
+    "uranium-processing",
+    "kovarex-enrichment-process",
+    "nuclear-fuel-reprocessing",
+}
+
 fw.prototypes_with_solid_variant = {
     {
-        name = "iron-chest"
-    },
-    {
-        name = "stone-furnace"
-    },
-    {
-        name = "assembling-machine-3"
-    },
-    {
-        name = "chemical-plant"
-    },
-    {
-        name = "oil-refinery"
-    },
-    {
-        name = ""
-    },
-    {
         name = "rail"
+    },
+    {
+        type = "item",
+        except = {
+            "iron-plate",
+            "copper-plate",
+            "steel-plate",
+            "sulfur",
+            "plastic-bar",
+            "copper-cable",
+            "iron-stick",
+            "iron-gear-wheel",
+            "electronic-circuit",
+            "advanced-circuit",
+            "processing-unit",
+            "engine-unit",
+            "electric-engine-unit",
+            "battery",
+            "explosives",
+            "flying-robot-frame",
+            "uranium-235",
+            "uranium-238",
+        }
     },
     {
         type = "ammo"
@@ -95,5 +115,8 @@ fw.prototypes_with_solid_variant = {
     },
     {
         type = "module"
+    },
+    {
+        type = "tool"
     },
 }
