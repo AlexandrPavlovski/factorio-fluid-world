@@ -160,9 +160,9 @@ function fw.fluidify_recipe(name)
             end
         end
 
-        if recipe.name == "sulfuric-acid" then
-            print("!!! - " .. serpent.block(recipe))
-        end
+        -- if recipe.name == "sulfuric-acid" then
+        --     print("!!! - " .. serpent.block(recipe))
+        -- end
     end
 end
 
@@ -643,6 +643,242 @@ function fw.fine_tune()
                 category = "solidifying",
                 subgroup = "intermediate-product",
                 order = "r[uranium-processing]-a[used-up-uranium-fuel-cell]"
+            },
+            {
+                type = "pipe-to-ground",
+                name = "steel-pipe-to-ground",
+                icon = "__fluidworld__/graphics/icons/steel-pipe-to-ground.png",
+                icon_size = 32,
+                flags = {"placeable-neutral", "player-creation"},
+                minable = {hardness = 0.2, mining_time = 0.5, result = "steel-pipe-to-ground"},
+                max_health = 150,
+                corpse = "small-remnants",
+                resistances = {
+                    {
+                        type = "fire",
+                        percent = 80
+                    },
+                    {
+                        type = "impact",
+                        percent = 40
+                    }
+                },
+                collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
+                selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+                fluid_box = {
+                    base_area = 1,
+                    pipe_covers = fw.pipecoverspictures("steel-"),
+                    pipe_connections = {
+                        {position = {0, -1}},
+                        {
+                            position = {0, 1},
+                            max_underground_distance = 20
+                        }
+                    }
+                },
+                underground_sprite = {
+                    filename = "__core__/graphics/arrows/underground-lines.png",
+                    priority = "extra-high-no-scale",
+                    width = 64,
+                    height = 64,
+                    scale = 0.5
+                },
+                vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+                pictures = {
+                    up = {
+                        filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/steel-pipe-to-ground-up.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {0.10, -0.04}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/hr-steel-pipe-to-ground-up.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    },
+                    down = {
+                        filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/steel-pipe-to-ground-down.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {0.05, 0}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/hr-steel-pipe-to-ground-down.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    },
+                    left = {
+                        filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/steel-pipe-to-ground-left.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {-0.12, 0.1}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/hr-steel-pipe-to-ground-left.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    },
+                    right = {
+                        filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/steel-pipe-to-ground-right.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {0.1, 0.1}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/steel-pipe-to-ground/hr-steel-pipe-to-ground-right.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    }
+                }
+            },
+            {
+                type = "item",
+                name = "steel-pipe-to-ground",
+                icon = "__fluidworld__/graphics/icons/steel-pipe-to-ground.png",
+                icon_size = 32,
+                flags = {"goes-to-quickbar"},
+                subgroup = "energy-pipe-distribution",
+                order = "a[pipe]-ba[steel-pipe-to-ground]",
+                place_result = "steel-pipe-to-ground",
+                stack_size = 50
+            },
+            {
+                type = "recipe",
+                name = "steel-pipe-to-ground",
+                ingredients = {
+                    {type = "fluid", name = "pipe", amount = 100},
+                    {type = "fluid", name = "iron-plate", amount = 50}
+                },
+                result_count = 2,
+                result = "steel-pipe-to-ground",
+                category = "fluid-crafting",
+                enabled = false
+            },
+            {
+                type = "pipe-to-ground",
+                name = "plastic-pipe-to-ground",
+                icon = "__fluidworld__/graphics/icons/plastic-pipe-to-ground.png",
+                icon_size = 32,
+                flags = {"placeable-neutral", "player-creation"},
+                minable = {hardness = 0.2, mining_time = 0.5, result = "plastic-pipe-to-ground"},
+                max_health = 150,
+                corpse = "small-remnants",
+                resistances = {
+                    {
+                        type = "fire",
+                        percent = 80
+                    },
+                    {
+                        type = "impact",
+                        percent = 40
+                    }
+                },
+                collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
+                selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+                fluid_box = {
+                    base_area = 1,
+                    pipe_covers = fw.pipecoverspictures("plastic-"),
+                    pipe_connections = {
+                        {position = {0, -1}},
+                        {
+                            position = {0, 1},
+                            max_underground_distance = 30
+                        }
+                    }
+                },
+                underground_sprite = {
+                    filename = "__core__/graphics/arrows/underground-lines.png",
+                    priority = "extra-high-no-scale",
+                    width = 64,
+                    height = 64,
+                    scale = 0.5
+                },
+                vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+                pictures = {
+                    up = {
+                        filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/plastic-pipe-to-ground-up.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {0.10, -0.04}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/hr-plastic-pipe-to-ground-up.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    },
+                    down = {
+                        filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/plastic-pipe-to-ground-down.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {0.05, 0}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/hr-plastic-pipe-to-ground-down.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    },
+                    left = {
+                        filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/plastic-pipe-to-ground-left.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {-0.12, 0.1}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/hr-plastic-pipe-to-ground-left.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    },
+                    right = {
+                        filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/plastic-pipe-to-ground-right.png",
+                        priority = "high",
+                        width = 64,
+                        height = 64, --, shift = {0.1, 0.1}
+                        hr_version = {
+                            filename = "__fluidworld__/graphics/entity/plastic-pipe-to-ground/hr-plastic-pipe-to-ground-right.png",
+                            priority = "extra-high",
+                            width = 128,
+                            height = 128,
+                            scale = 0.5
+                        }
+                    }
+                }
+            },
+            {
+                type = "item",
+                name = "plastic-pipe-to-ground",
+                icon = "__fluidworld__/graphics/icons/plastic-pipe-to-ground.png",
+                icon_size = 32,
+                flags = {"goes-to-quickbar"},
+                subgroup = "energy-pipe-distribution",
+                order = "a[pipe]-bb[plastic-pipe-to-ground]",
+                place_result = "plastic-pipe-to-ground",
+                stack_size = 50
+            },
+            {
+                type = "recipe",
+                name = "plastic-pipe-to-ground",
+                ingredients = {
+                    {type = "fluid", name = "pipe", amount = 100},
+                    {type = "fluid", name = "plastic-bar", amount = 50}
+                },
+                result_count = 2,
+                result = "plastic-pipe-to-ground",
+                category = "fluid-crafting",
+                enabled = false
             }
         }
     )
@@ -650,6 +886,153 @@ function fw.fine_tune()
     ef[#ef + 1] = {
         type = "unlock-recipe",
         recipe = "liquify-used-up-uranium-fuel-cell"
+    }
+    local sp = data.raw["technology"]["steel-processing"].effects
+    sp[#sp + 1] = {
+        type = "unlock-recipe",
+        recipe = "steel-pipe-to-ground"
+    }
+    local p = data.raw["technology"]["plastics"].effects
+    p[#p + 1] = {
+        type = "unlock-recipe",
+        recipe = "plastic-pipe-to-ground"
+    }
+end
+
+function fw.pipecoverspictures(name)
+    return {
+        north = {
+            layers = {
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-north.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" .. name .. "pipe-cover-north.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5
+                    }
+                },
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-north-shadow.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    draw_as_shadow = true,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" ..
+                            name .. "pipe-cover-north-shadow.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5,
+                        draw_as_shadow = true
+                    }
+                }
+            }
+        },
+        east = {
+            layers = {
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-east.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" .. name .. "pipe-cover-east.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5
+                    }
+                },
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-east-shadow.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    draw_as_shadow = true,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" ..
+                            name .. "pipe-cover-east-shadow.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5,
+                        draw_as_shadow = true
+                    }
+                }
+            }
+        },
+        south = {
+            layers = {
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-south.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" .. name .. "pipe-cover-south.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5
+                    }
+                },
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-south-shadow.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    draw_as_shadow = true,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" ..
+                            name .. "pipe-cover-south-shadow.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5,
+                        draw_as_shadow = true
+                    }
+                }
+            }
+        },
+        west = {
+            layers = {
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-west.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" .. name .. "pipe-cover-west.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5
+                    }
+                },
+                {
+                    filename = "__fluidworld__/graphics/entity/pipe-covers/" .. name .. "pipe-cover-west-shadow.png",
+                    priority = "extra-high",
+                    width = 64,
+                    height = 64,
+                    draw_as_shadow = true,
+                    hr_version = {
+                        filename = "__fluidworld__/graphics/entity/pipe-covers/hr-" ..
+                            name .. "pipe-cover-west-shadow.png",
+                        priority = "extra-high",
+                        width = 128,
+                        height = 128,
+                        scale = 0.5,
+                        draw_as_shadow = true
+                    }
+                }
+            }
+        }
     }
 end
 
