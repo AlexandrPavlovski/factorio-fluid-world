@@ -1,18 +1,3 @@
-function fw.deepcopy(orig)
-    local orig_type = type(orig)
-    local copy
-    if orig_type == "table" then
-        copy = {}
-        for orig_key, orig_value in next, orig, nil do
-            copy[fw.deepcopy(orig_key)] = fw.deepcopy(orig_value)
-        end
-        setmetatable(copy, fw.deepcopy(getmetatable(orig)))
-    else -- number, string, boolean, etc
-        copy = orig
-    end
-    return copy
-end
-
 function fw.is_item_convertable(item)
     for _, flag in pairs(item.flags) do
         if flag == "hidden" then
@@ -85,6 +70,12 @@ function fw.fluidify_recipe(name)
             enabled = recipe.normal.enabled
         end
         recipe.enabled = enabled
+
+        local energy = recipe.energy_required
+        if energy == nil and recipe.normal ~= nil then
+            energy = recipe.normal.energy_required
+        end
+        recipe.energy_required = energy
 
         local ingredients = recipe.ingredients
         if ingredients == nil then
@@ -160,9 +151,9 @@ function fw.fluidify_recipe(name)
             end
         end
 
-        -- if recipe.name == "sulfuric-acid" then
-        --     print("!!! - " .. serpent.block(recipe))
-        -- end
+    -- if recipe.name == "sulfuric-acid" then
+    --     print("!!! - " .. serpent.block(recipe))
+    -- end
     end
 end
 
@@ -755,7 +746,7 @@ function fw.fine_tune()
                 name = "steel-pipe-to-ground",
                 ingredients = {
                     {type = "fluid", name = "pipe", amount = 100},
-                    {type = "fluid", name = "iron-plate", amount = 50}
+                    {type = "fluid", name = "steel-plate", amount = 50}
                 },
                 result_count = 2,
                 result = "steel-pipe-to-ground",
