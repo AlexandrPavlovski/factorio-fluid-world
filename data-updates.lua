@@ -163,8 +163,8 @@ function fw.add_solidify_recipe(item)
         local solid_recipe = util.table.deepcopy(recipe)
         solid_recipe.name = "solid-" .. item.name
         solid_recipe.category = "solidifying"
-        solid_recipe.ingredients = {{type = "fluid", name = item.name, amount = 10}}
-        solid_recipe.results = {{type = "item", name = item.name, amount = 1}}
+		solid_recipe.ingredients = {{type = "fluid", name = item.name, amount = recipe.results[1].amount }}
+        solid_recipe.results = {{type = "item", name = item.name, amount = recipe.results[1].amount / 10 }}
         data:extend({solid_recipe})
     end
 end
@@ -1050,3 +1050,5 @@ function fw.start_converting()
 end
 
 fw.start_converting()
+
+-- error("STOP")

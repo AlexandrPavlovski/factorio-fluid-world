@@ -1,3 +1,7 @@
+## 0.3.3 (13 October 2018)
+
+* Fixed solid recipes for items that is produced in multiple quantities
+
 ## 0.3.2 (13 October 2018)
 
 * Fine tuned steel and plastic pipes undergrund reach distance to make it easy to replace old pipes
