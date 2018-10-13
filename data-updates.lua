@@ -663,7 +663,7 @@ function fw.fine_tune()
                         {position = {0, -1}},
                         {
                             position = {0, 1},
-                            max_underground_distance = 20
+                            max_underground_distance = 21
                         }
                     }
                 },
@@ -781,7 +781,7 @@ function fw.fine_tune()
                         {position = {0, -1}},
                         {
                             position = {0, 1},
-                            max_underground_distance = 30
+                            max_underground_distance = 43
                         }
                     }
                 },

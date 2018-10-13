@@ -1,3 +1,7 @@
+## 0.3.2 (13 October 2018)
+
+* Fine tuned steel and plastic pipes undergrund reach distance to make it easy to replace old pipes
+
 ## 0.3.1 (11 October 2018)
 
 * Cleaned code a bit
