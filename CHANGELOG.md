@@ -1,3 +1,7 @@
+## 0.3.4 (16 October 2018)
+
+* Added 10 oil refineries to initial items
+
 ## 0.3.3 (13 October 2018)
 
 * Fixed solid recipes for items that is produced in multiple quantities
