@@ -1,3 +1,7 @@
+## 0.3.5 (23 October 2018)
+
+* Fixed chemical plant input
+
 ## 0.3.4 (16 October 2018)
 
 * Added 10 oil refineries to initial items
