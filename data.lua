@@ -120,3 +120,10 @@ fw.prototypes_with_solid_variant = {
         type = "tool"
     },
 }
+
+data.raw["recipe"]["cliff-explosives"].ingredients =
+{
+	{"explosives", 10},
+	{"grenade", 1},
+	{"iron-plate", 10}
+}

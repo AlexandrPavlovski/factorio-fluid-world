@@ -1,3 +1,8 @@
+## 0.3.6 (23 October 2018)
+
+* Fixed cliff explosives recipe
+* Added some missing translations
+
 ## 0.3.5 (23 October 2018)
 
 * Fixed chemical plant input
