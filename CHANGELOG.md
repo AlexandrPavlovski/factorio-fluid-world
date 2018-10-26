@@ -1,4 +1,9 @@
-## 0.3.6 (23 October 2018)
+## 0.3.7 (26 October 2018)
+
+* Fixed solid fuel recipe
+* Fixed previoius translation fix
+
+## 0.3.6 (25 October 2018)
 
 * Fixed cliff explosives recipe
 * Added some missing translations

@@ -14,7 +14,7 @@ script.on_event(
         player.insert{name="boiler", count=1}
         player.insert{name="steam-engine", count=1}
         player.insert{name="small-electric-pole", count=10}
-		player.insert{name="oil-refinery", count=10}
+        player.insert{name="oil-refinery", count=10}
 
         player.force.technologies["automation"].researched = true
     end
