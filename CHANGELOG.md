@@ -1,3 +1,8 @@
+## 1.0.0 (29 October 2018)
+
+* Fixed solidifier output pipe
+* Test game finished!
+
 ## 0.3.7 (26 October 2018)
 
 * Fixed solid fuel recipe
