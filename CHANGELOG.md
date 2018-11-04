@@ -1,3 +1,8 @@
+## 1.0.1 (04 November 2018)
+
+* Added solid Copper Wire recipe
+
+
 ## 1.0.0 (29 October 2018)
 
 * Fixed solidifier output pipe

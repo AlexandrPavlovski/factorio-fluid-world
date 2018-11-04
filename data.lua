@@ -77,7 +77,6 @@ fw.prototypes_with_solid_variant = {
             "steel-plate",
             "sulfur",
             "plastic-bar",
-            "copper-cable",
             "iron-stick",
             "iron-gear-wheel",
             "electronic-circuit",
