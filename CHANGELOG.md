@@ -1,3 +1,7 @@
+## 1.0.2 (19 November 2018)
+
+* Fixed locale duplicate key
+
 ## 1.0.1 (04 November 2018)
 
 * Added solid Copper Wire recipe
